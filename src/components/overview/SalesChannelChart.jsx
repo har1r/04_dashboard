@@ -1,28 +1,36 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, Cell } from "recharts";
-import { motion } from "framer-motion";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, Cell } from 'recharts';
+import { motion } from 'framer-motion';
 
-const SALES_CHANNEL_DATA = [
-  { name: "Website", value: 45600 },
-	{ name: "Mobile App", value: 38200 },
-	{ name: "Marketplace", value: 29800 },
-	{ name: "Social Media", value: 18700 },
-];
+// const PAT_DATA = [
+//   { name: "Target", value: 567 },
+//   { name: "Realisasi", value: 630 },
 
-const COLORS = ["#6366F1", "#8B5CF6", "#EC4899", "#10B981", "#F59E0B"];
+// ];
 
-function SalesChannelChart() {
+const COLORS = ["#EC4899", "#10B981", "#F59E0B"]; //#6366F1", "#8B5CF6"
+
+function SalesChannelChart({title, targetvalue, realvalue}) {
+	const DATA = [
+		{ name: "Target", value: targetvalue },
+		{ name: "Realisasi", value: realvalue },
+	  
+	];
   return (
     <motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 lg:col-span-2 border border-gray-700'
+			className='bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700'
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.4 }}
 		>
-			<h2 className='text-lg font-medium mb-4 text-gray-100'>Sales by Channel</h2>
+			<h2 className='text-lg font-medium mb-4 text-gray-100'>{title}</h2>
 
 			<div className='h-80'>
 				<ResponsiveContainer>
-					<BarChart data={SALES_CHANNEL_DATA}>
+					<BarChart 
+						data={DATA} 
+						margin={{ top: 20, right: 30, left: 50, bottom: 20 }} 
+						barCategoryGap="20%"
+					>
 						<CartesianGrid strokeDasharray='3 3' stroke='#4B5563' />
 						<XAxis dataKey='name' stroke='#9CA3AF' />
 						<YAxis stroke='#9CA3AF' />
@@ -32,10 +40,10 @@ function SalesChannelChart() {
 								borderColor: "#4B5563",
 							}}
 							itemStyle={{ color: "#E5E7EB" }}
+							formatter={(value) => `Rp ${value.toLocaleString('id-ID')}`}
 						/>
-						<Legend />
-						<Bar dataKey={"value"} fill='#8884d8'>
-							{SALES_CHANNEL_DATA.map((_, index) => (
+						<Bar dataKey={"value"} fill='#8884d8' barSize={55}>
+							{DATA.map((_, index) => (
 								<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
 							))}
 						</Bar>

@@ -1,21 +1,17 @@
-import { BarChart2, DollarSign, Menu, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from 'lucide-react';
+import { Menu, BarChart2, Files, Archive, Settings} from 'lucide-react';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const SIDEBAR_ITEMS = [
-	{
-		name: "Overview",
-		icon: BarChart2,
-		color: "#6366f1",
-		href: "/",
+	{name: "Overview", icon: BarChart2,color: "#6366f1", href: "/",
 	},
-	{ name: "Products", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
-	{ name: "Users", icon: Users, color: "#EC4899", href: "/users" },
-	{ name: "Sales", icon: DollarSign, color: "#10B981", href: "/sales" },
-	{ name: "Orders", icon: ShoppingCart, color: "#F59E0B", href: "/orders" },
-	{ name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
-	{ name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
+	{ name: "Mutasi Habis", icon: Files, color: "#8B5CF6", href: "/mh" },
+	{ name: "Mutasi Sebagian", icon: Files, color: "#EC4899", href: "/ms" },
+	{ name: "Objek Pajak baru", icon: Files, color: "#10B981", href: "/opb" },
+	{ name: "Pembetulan", icon: Files, color: "#F59E0B", href: "/pbt" },
+	{ name: "Penyimpanan File", icon: Archive, color: "#3B82F6", href: "/filestorage" },
+	{ name: "Pengaturan", icon: Settings, color: "#6EE7B7", href: "/pengaturan" },
 ];
 
 function Sidebar() {

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BarChart2, ShoppingBag, Users, Zap } from 'lucide-react';
+import { BookCheck } from 'lucide-react';
 import Header from '../components/common/Header';
 import StatCard from '../components/common/StatCard';
 import SalesOverviewChart from '../components/overview/SalesOverviewChart';
@@ -7,11 +7,12 @@ import CategoryDistributinChart from '../components/overview/CategoryDistributin
 import SalesChanneChart from '../components/overview/SalesChannelChart';
 
 const STAT_ITEMS = [
-  {name: "Total Sales", icon: Zap, value: '$12,345', color: '#6366F1'},
-  {name: "New Users", icon: Users, value: '1,345', color: '#8B5CF6'},
-  {name: "Total Products", icon: ShoppingBag, value: '576', color: '#EC4899'},
-  {name: "Conversion Rate", icon: BarChart2, value: '$12.5%', color: '#10B981'},
-]
+  {name: "Mutasi Habis", icon: BookCheck, value: '523', color: '#10B981'}, //#6366F1
+  {name: "Mutasi Sebagian", icon: BookCheck, value: '1,345', color: '#10B981'}, //#8B5CF6
+  {name: "Objek Pajak baru", icon: BookCheck, value: '576', color: '#10B981'}, //#EC4899
+  {name: "Pembetulan", icon: BookCheck, value: '59', color: '#10B981'},
+];
+
 function OverviewPage() {
   return (
     <div className='flex-1 overflow-auto relative z-10'>
@@ -38,7 +39,8 @@ function OverviewPage() {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
           <SalesOverviewChart />
           <CategoryDistributinChart />
-          <SalesChanneChart />
+          <SalesChanneChart title="Pajak Air Tanah" targetvalue={756000000} realvalue={787000000}/>
+          <SalesChanneChart title="Umbul-Umbul" targetvalue={456000000} realvalue={533000000}/>
         </div>
       </main>
     </div>

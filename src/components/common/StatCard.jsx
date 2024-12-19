@@ -9,7 +9,7 @@ function StatCard({name, icon:Icon, value, color}) {
     >
         <div className='px-4 p-5 sm:6'>
             <span className='flex items-center text-sm font-medium text-gray-400'>
-                <Icon 
+                <Icon
                     size={20}
                     className="mr-2"
                     style={{color}}
