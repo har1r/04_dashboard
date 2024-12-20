@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 
 const COLORS = ["#EC4899", "#10B981", "#F59E0B"]; //#6366F1", "#8B5CF6"
 
-function SalesChannelChart({title, targetvalue, realvalue}) {
+function ServiceBarChart({title, targetvalue, realvalue}) {
 	const DATA = [
 		{ name: "Target", value: targetvalue },
 		{ name: "Realisasi", value: realvalue },
@@ -54,4 +54,4 @@ function SalesChannelChart({title, targetvalue, realvalue}) {
   );
 };
 
-export default SalesChannelChart;
+export default ServiceBarChart;

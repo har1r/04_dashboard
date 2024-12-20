@@ -2,8 +2,6 @@ import { BetweenHorizontalStart, ShieldEllipsis, BetweenHorizontalEnd, ShieldChe
 import { motion } from 'framer-motion';
 import Header from '../components/common/Header';
 import StatCard from '../components/common/StatCard';
-import CategoryDistributinChart from '../components/overview/CategoryDistributinChart';
-import SalesTrendChart from '../components/products/SalesTrendChart';
 import ProductsTable from '../components/products/ProductsTable';
 
 const PRODUCT_ITEMS = [

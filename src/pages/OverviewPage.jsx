@@ -3,8 +3,8 @@ import { BookCheck } from 'lucide-react';
 import Header from '../components/common/Header';
 import StatCard from '../components/common/StatCard';
 import SalesOverviewChart from '../components/overview/SalesOverviewChart';
-import CategoryDistributinChart from '../components/overview/CategoryDistributinChart';
-import SalesChanneChart from '../components/overview/SalesChannelChart';
+import ServicePieChart from '../components/overview/ServicePieChart';
+import ServiceBarChart from '../components/overview/ServiceBarChart';
 
 const STAT_ITEMS = [
   {name: "Mutasi Habis", icon: BookCheck, value: '523', color: '#10B981'}, //#6366F1
@@ -38,9 +38,9 @@ function OverviewPage() {
         {/* CHARTS */}
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
           <SalesOverviewChart />
-          <CategoryDistributinChart />
-          <SalesChanneChart title="Pajak Air Tanah" targetvalue={756000000} realvalue={787000000}/>
-          <SalesChanneChart title="Umbul-Umbul" targetvalue={456000000} realvalue={533000000}/>
+          <ServicePieChart />
+          <ServiceBarChart title="Pajak Air Tanah" targetvalue={756000000} realvalue={787000000}/>
+          <ServiceBarChart title="Umbul-Umbul" targetvalue={456000000} realvalue={533000000}/>
         </div>
       </main>
     </div>
